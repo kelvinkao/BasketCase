@@ -27,7 +27,7 @@ class ViewController: UIViewController {
 
 private extension ViewController {
     func configureDatePicker() {
-        let oneDay: Double = 24*60*24
+        let oneDay: Double = 24*60*60
         datePicker.maximumDate = NSDate(timeIntervalSinceNow: oneDay)
         datePicker.minimumDate = NSDate(timeIntervalSinceNow: -30*oneDay)
     }
