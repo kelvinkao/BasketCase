@@ -28,11 +28,11 @@ class ViewController: UIViewController {
 private extension ViewController {
     func configureDatePicker() {
         let oneDay: Double = 24*60*60
-        datePicker.maximumDate = NSDate(timeIntervalSinceNow: oneDay)
-        datePicker.minimumDate = NSDate(timeIntervalSinceNow: -30*oneDay)
+        datePicker.maximumDate = Date(timeIntervalSinceNow: oneDay)
+        datePicker.minimumDate = Date(timeIntervalSinceNow: -30*oneDay)
     }
     
-    func showAlertWithResult(result: FirebaseDudeResult) {
+    func showAlertWithResult(_ result: FirebaseDudeResult) {
         var message = ""
         switch result {
         case .success:
@@ -41,10 +41,10 @@ private extension ViewController {
             message = "Failed: \(error)"
         }
         
-        let alert = UIAlertController(title: nil, message: message, preferredStyle: .Alert)
-        let okAction = UIAlertAction(title: "Sweet", style: .Default, handler: nil)
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Sweet", style: .default, handler: nil)
         alert.addAction(okAction)
-        presentViewController(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
 }
 
@@ -52,13 +52,13 @@ private extension ViewController {
 
 extension ViewController {
     @IBAction func submitButtonTapped() {
-        submitButton.enabled = false
+        submitButton.isEnabled = false
         
         FirebaseDude.recordFieldGoal(made: madeNumber(),
                                      attempted: attemptedNumber(),
                                      date: datePicker.date) { (result) in
-                                        dispatch_async(dispatch_get_main_queue()) {
-                                            self.submitButton.enabled = true
+                                        DispatchQueue.main.async {
+                                            self.submitButton.isEnabled = true
                                             self.showAlertWithResult(result)
                                         }
         }
@@ -88,19 +88,19 @@ extension ViewController {
         return numberFromText(attemptedNumberLabel.text)
     }
     
-    func numberFromText(text: String?) -> Int {
+    func numberFromText(_ text: String?) -> Int {
         guard let text = text,
             let num = Int(text) else {
                 return 0 }
         return num
     }
     
-    func decrementedText(original: String?) -> String {
+    func decrementedText(_ original: String?) -> String {
         let originalNum = numberFromText(original)
         return "\(originalNum - 1)"
     }
     
-    func incrementedText(original: String?) -> String {
+    func incrementedText(_ original: String?) -> String {
         let originalNum = numberFromText(original)
         return "\(originalNum + 1)"
     }

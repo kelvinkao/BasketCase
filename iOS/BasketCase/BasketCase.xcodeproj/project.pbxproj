@@ -219,9 +219,11 @@
 					3A751A301E8B6E040063E3F3 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 4HMH7AJ578;
+						LastSwiftMigration = 0820;
 					};
 					3A751A441E8B6E040063E3F3 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 3A751A301E8B6E040063E3F3;
 					};
 				};
@@ -427,6 +429,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kelvinkaodev.BasketCase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -453,6 +456,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kelvinkaodev.BasketCase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -464,6 +468,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kelvinkaodev.BasketCaseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BasketCase.app/BasketCase";
 			};
 			name = Debug;
@@ -476,6 +481,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kelvinkaodev.BasketCaseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BasketCase.app/BasketCase";
 			};
 			name = Release;
@@ -499,6 +505,7 @@
 				3A751A501E8B6E040063E3F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A751A511E8B6E040063E3F3 /* Build configuration list for PBXNativeTarget "BasketCaseTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +514,7 @@
 				3A751A531E8B6E040063E3F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
